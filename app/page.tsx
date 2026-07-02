@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ConvertRxLogo from "@/components/ConvertRxLogo";
 import { ImageIcon, FileDown, FilePlus2, Layers, Shield, Zap, Globe, Star } from "lucide-react";
 
 const tools = [
@@ -64,7 +65,10 @@ export default function Home() {
 
           {/* Hero */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-sm font-medium mb-6">
+            <div className="flex justify-center mb-6">
+              <ConvertRxLogo size={56} />
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0d5f72]/40 bg-[#0d5f72]/10 text-[#7ecfe0] text-sm font-medium mb-6">
               <Shield size={14} /> 100% Free · No Signup · Files Stay on Your Device
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -108,7 +112,7 @@ export default function Home() {
 
           {/* Features */}
           <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-8 mb-12">
-            <h2 className="text-2xl font-bold text-white text-center mb-8">Why Choose FileConvert?</h2>
+            <h2 className="text-2xl font-bold text-white text-center mb-8">Why Choose ConvertRX?</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="text-center">

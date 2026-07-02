@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import ConvertRxLogo from "./ConvertRxLogo";
 
 const links = [
   { href: "/image-converter", label: "Image Converter" },
@@ -14,11 +15,8 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1e]/80 backdrop-blur-xl border-b border-white/5">
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 font-bold text-lg">
-          <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-            <Zap size={16} className="text-white" />
-          </div>
-          <span className="gradient-text">FileConvert</span>
+        <a href="/" className="flex items-center">
+          <ConvertRxLogo size={34} />
         </a>
         <ul className="hidden md:flex items-center gap-1">
           {links.map((l) => (
@@ -29,7 +27,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <a href="/" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all duration-200">
+        <a href="/" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0d5f72] hover:bg-[#0e6d83] text-white text-sm font-semibold transition-all duration-200">
           All Tools
         </a>
         <button className="md:hidden text-gray-400 hover:text-white" onClick={() => setOpen(!open)}>

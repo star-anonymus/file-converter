@@ -12,7 +12,7 @@ body { font-family: var(--font-inter); }
 ::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 3px; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #0d5f72, #1a8fa8, #5ca823);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
