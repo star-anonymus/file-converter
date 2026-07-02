@@ -52,8 +52,8 @@ export default function PdfToWordPage() {
 
     const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType } = docx;
 
-    // Point pdf.js worker to the CDN build matching the installed version
-    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+    // Worker is copied from node_modules to public/ by next.config.ts at build/dev time
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
