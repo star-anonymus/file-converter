@@ -19,7 +19,7 @@ export default function ConvertRxLogo({ iconOnly = false, size = 36, className =
         <defs>
           {/* Arrowhead markers — orient="auto" rotates them to match path direction */}
           <marker id={tId} markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
-            <polygon points="0,0 8,3 0,6" fill="#0d5f72" />
+            <polygon points="0,0 8,3 0,6" fill="#14788F" />
           </marker>
           <marker id={gId} markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="userSpaceOnUse">
             <polygon points="0,0 8,3 0,6" fill="#5ca823" />
@@ -29,7 +29,7 @@ export default function ConvertRxLogo({ iconOnly = false, size = 36, className =
         {/* Teal arc — top semicircle, drawn CCW (sweep=0) from left to right via top */}
         <path
           d="M 8 20 A 12 12 0 0 0 32 20"
-          stroke="#0d5f72"
+          stroke="#14788F"
           strokeWidth="4"
           strokeLinecap="butt"
           fill="none"
@@ -47,12 +47,12 @@ export default function ConvertRxLogo({ iconOnly = false, size = 36, className =
         />
 
         {/* Document icon in center */}
-        <rect x="14" y="12" width="12" height="16" rx="1.5" fill="white" stroke="#0d5f72" strokeWidth="1.2" />
+        <rect x="14" y="12" width="12" height="16" rx="1.5" fill="white" stroke="#14788F" strokeWidth="1.2" />
         {/* Folded top-right corner */}
-        <path d="M 22 12 L 26 16 L 22 16 Z" fill="#cde9f0" stroke="#0d5f72" strokeWidth="0.8" />
+        <path d="M 22 12 L 26 16 L 22 16 Z" fill="#cde9f0" stroke="#14788F" strokeWidth="0.8" />
         {/* Document lines */}
-        <line x1="16.5" y1="19" x2="23.5" y2="19" stroke="#0d5f72" strokeWidth="0.9" strokeLinecap="round" />
-        <line x1="16.5" y1="21.5" x2="23.5" y2="21.5" stroke="#0d5f72" strokeWidth="0.9" strokeLinecap="round" />
+        <line x1="16.5" y1="19" x2="23.5" y2="19" stroke="#14788F" strokeWidth="0.9" strokeLinecap="round" />
+        <line x1="16.5" y1="21.5" x2="23.5" y2="21.5" stroke="#14788F" strokeWidth="0.9" strokeLinecap="round" />
         <line x1="16.5" y1="24" x2="21" y2="24" stroke="#5ca823" strokeWidth="0.9" strokeLinecap="round" />
         {/* Small convert arrow inside doc */}
         <line x1="16.5" y1="16" x2="20" y2="16" stroke="#5ca823" strokeWidth="1" strokeLinecap="round" />
@@ -62,7 +62,7 @@ export default function ConvertRxLogo({ iconOnly = false, size = 36, className =
       {!iconOnly && (
         <div className="leading-none select-none">
           <div className="font-extrabold text-[17px] tracking-tight leading-none">
-            <span style={{ color: "#0d5f72" }}>CONVERT</span>
+            <span style={{ color: "#14788F" }}>CONVERT</span>
             <span style={{ color: "#5ca823" }}>RX</span>
           </div>
           <div className="text-[7.5px] font-bold tracking-[0.18em] mt-[3px]" style={{ color: "#5ca823" }}>

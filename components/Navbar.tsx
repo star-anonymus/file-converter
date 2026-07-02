@@ -14,7 +14,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#070e14]/85 backdrop-blur-xl border-b border-[#0d5f72]/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#070e14]/85 backdrop-blur-xl border-b border-[#14788F]/20">
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="/" className="flex items-center">
           <ConvertRxLogo size={34} />
@@ -22,7 +22,7 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-1">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-[#0d5f72]/15 transition-all duration-200">
+              <a href={l.href} className="px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-[#14788F]/15 transition-all duration-200">
                 {l.label}
               </a>
             </li>
@@ -36,9 +36,9 @@ export default function Navbar() {
         </button>
       </nav>
       {open && (
-        <div className="md:hidden bg-[#0a1720]/95 backdrop-blur-xl border-t border-[#0d5f72]/15 px-6 py-4 flex flex-col gap-2">
+        <div className="md:hidden bg-[#0a1720]/95 backdrop-blur-xl border-t border-[#14788F]/15 px-6 py-4 flex flex-col gap-2">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="px-4 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-[#0d5f72]/15 transition-colors">
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="px-4 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-[#14788F]/15 transition-colors">
               {l.label}
             </a>
           ))}

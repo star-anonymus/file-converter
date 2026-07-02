@@ -58,7 +58,7 @@ export default function ImagesToPdfPage() {
         <div className="max-w-4xl mx-auto">
 
           <div className="text-center mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-[#0d5f72]/15 border border-[#0d5f72]/30 flex items-center justify-center text-[#1a8fa8] mx-auto mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-[#14788F]/15 border border-[#14788F]/30 flex items-center justify-center text-[#1a9ab5] mx-auto mb-4">
               <FilePlus2 size={26} />
             </div>
             <h1 className="text-4xl font-extrabold text-white mb-3">Images to PDF</h1>
@@ -71,7 +71,7 @@ export default function ImagesToPdfPage() {
             <div className="flex gap-2">
               {(["A4", "Letter", "Fit"] as const).map((s) => (
                 <button key={s} onClick={() => setPageSize(s)}
-                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${pageSize === s ? "bg-[#0d5f72] border-[#0d5f72] text-white" : "border-white/10 text-gray-400 hover:border-[#0d5f72]/40 hover:text-white"}`}>
+                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${pageSize === s ? "bg-[#14788F] border-[#14788F] text-white" : "border-white/10 text-gray-400 hover:border-[#14788F]/40 hover:text-white"}`}>
                   {s === "Fit" ? "Fit to Image" : s}
                 </button>
               ))}
@@ -79,7 +79,7 @@ export default function ImagesToPdfPage() {
           </div>
 
           {/* Dropzone */}
-          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-10 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#0d5f72]/50 hover:bg-[#0d5f72]/05"}`}>
+          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-10 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#14788F]/50 hover:bg-[#14788F]/05"}`}>
             <input {...getInputProps()} />
             <Upload size={36} className="mx-auto text-gray-600 mb-4" />
             <p className="text-white font-semibold text-lg mb-1">Drop images here</p>
@@ -113,7 +113,7 @@ export default function ImagesToPdfPage() {
 
           <div className="flex flex-wrap gap-3">
             <button onClick={handleConvert} disabled={converting || !images.length}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed font-semibold shadow-lg shadow-[#0d5f72]/25 btn-teal">
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed font-semibold shadow-lg shadow-[#14788F]/25 btn-teal">
               {converting ? <RefreshCw size={18} className="animate-spin-slow" /> : <FilePlus2 size={18} />}
               {converting ? "Creating PDF..." : "Create PDF"}
             </button>

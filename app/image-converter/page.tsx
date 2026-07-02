@@ -87,7 +87,7 @@ export default function ImageConverterPage() {
 
           {/* Header */}
           <div className="text-center mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-[#0d5f72]/15 border border-[#0d5f72]/30 flex items-center justify-center text-[#1a8fa8] mx-auto mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-[#14788F]/15 border border-[#14788F]/30 flex items-center justify-center text-[#1a9ab5] mx-auto mb-4">
               <ImageIcon size={26} />
             </div>
             <h1 className="text-4xl font-extrabold text-white mb-3">Image Converter</h1>
@@ -106,8 +106,8 @@ export default function ImageConverterPage() {
                       onClick={() => setFormat(f.value)}
                       className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${
                         format === f.value
-                          ? "bg-[#0d5f72] border-[#0d5f72] text-white shadow-lg shadow-[#0d5f72]/25"
-                          : "border-white/10 text-gray-400 hover:border-[#0d5f72]/40 hover:text-white"
+                          ? "bg-[#14788F] border-[#14788F] text-white shadow-lg shadow-[#14788F]/25"
+                          : "border-white/10 text-gray-400 hover:border-[#14788F]/40 hover:text-white"
                       }`}
                     >
                       {f.label}
@@ -131,7 +131,7 @@ export default function ImageConverterPage() {
           <div
             {...getRootProps()}
             className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${
-              isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#0d5f72]/50 hover:bg-[#0d5f72]/05"
+              isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#14788F]/50 hover:bg-[#14788F]/05"
             }`}
           >
             <input {...getInputProps()} />
@@ -167,7 +167,7 @@ export default function ImageConverterPage() {
                           <span className="text-xs text-green-500">{formatBytes(r.size)}</span>
                         )}
                         {r?.status === "done" && (
-                          <a href={r.url} download={r.name} className="text-[#1a8fa8] hover:text-[#7ecfe0] transition-colors">
+                          <a href={r.url} download={r.name} className="text-[#1a9ab5] hover:text-[#7ecfe0] transition-colors">
                             <Download size={15} />
                           </a>
                         )}
@@ -184,7 +184,7 @@ export default function ImageConverterPage() {
             <button
               onClick={handleConvert}
               disabled={converting || !files.length}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed font-semibold shadow-lg shadow-[#0d5f72]/25 btn-teal"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed font-semibold shadow-lg shadow-[#14788F]/25 btn-teal"
             >
               {converting ? <RefreshCw size={18} className="animate-spin-slow" /> : <ImageIcon size={18} />}
               {converting ? "Converting..." : "Convert Images"}

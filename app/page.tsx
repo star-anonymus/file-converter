@@ -54,11 +54,11 @@ const tools = [
 /* All card colors use brand teal / green family */
 const colorMap: Record<string, { border: string; bg: string; icon: string; badge: string; tag: string }> = {
   teal:  {
-    border: "hover:border-[#0d5f72]/60",
-    bg:     "group-hover:bg-[#0d5f72]/10",
-    icon:   "text-[#1a8fa8]",
-    badge:  "bg-[#0d5f72]/15 text-[#7ecfe0]",
-    tag:    "bg-[#0d5f72]/10 text-[#7ecfe0] border-[#0d5f72]/25",
+    border: "hover:border-[#14788F]/60",
+    bg:     "group-hover:bg-[#14788F]/10",
+    icon:   "text-[#1a9ab5]",
+    badge:  "bg-[#14788F]/15 text-[#7ecfe0]",
+    tag:    "bg-[#14788F]/10 text-[#7ecfe0] border-[#14788F]/25",
   },
   green: {
     border: "hover:border-[#5ca823]/60",
@@ -88,7 +88,7 @@ export default function Home() {
             <div className="flex justify-center mb-7">
               <ConvertRxLogo size={60} />
             </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0d5f72]/35 bg-[#0d5f72]/10 text-[#7ecfe0] text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#14788F]/35 bg-[#14788F]/10 text-[#7ecfe0] text-sm font-medium mb-6">
               <Shield size={14} /> 100% Free · No Signup · Files Stay on Your Device
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -109,14 +109,14 @@ export default function Home() {
                 <a
                   key={tool.href}
                   href={tool.href}
-                  className={`group relative rounded-2xl border border-[#0d5f72]/15 bg-[#0d5f72]/[0.04] p-7 tool-card flex flex-col gap-5 ${c.border} transition-all duration-300`}
+                  className={`group relative rounded-2xl border border-[#14788F]/15 bg-[#14788F]/[0.04] p-7 tool-card flex flex-col gap-5 ${c.border} transition-all duration-300`}
                 >
                   {tool.popular && (
                     <span className={`absolute top-4 right-4 text-xs font-semibold px-2.5 py-1 rounded-full ${c.badge}`}>
                       Popular
                     </span>
                   )}
-                  <div className={`w-12 h-12 rounded-xl bg-[#0d5f72]/08 flex items-center justify-center ${c.icon} transition-colors duration-300 ${c.bg}`}>
+                  <div className={`w-12 h-12 rounded-xl bg-[#14788F]/08 flex items-center justify-center ${c.icon} transition-colors duration-300 ${c.bg}`}>
                     <Icon size={22} />
                   </div>
                   <div className="flex-1">
@@ -137,12 +137,12 @@ export default function Home() {
           </div>
 
           {/* Features */}
-          <div className="rounded-2xl border border-[#0d5f72]/20 bg-[#0d5f72]/05 p-8 mb-12">
+          <div className="rounded-2xl border border-[#14788F]/20 bg-[#14788F]/05 p-8 mb-12">
             <h2 className="text-2xl font-bold text-white text-center mb-8">Why Choose ConvertRX?</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="text-center">
-                  <div className="w-10 h-10 rounded-xl bg-[#0d5f72]/15 border border-[#0d5f72]/25 flex items-center justify-center text-[#1a8fa8] mx-auto mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#14788F]/15 border border-[#14788F]/25 flex items-center justify-center text-[#1a9ab5] mx-auto mb-3">
                     <Icon size={18} />
                   </div>
                   <h3 className="text-white font-semibold text-sm mb-1.5">{title}</h3>

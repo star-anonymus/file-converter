@@ -147,7 +147,7 @@ export default function ImageCompressorPage() {
               {compressing ? "Compressing..." : "Compress Images"}
             </button>
             {results.some((r) => r.url) && (
-              <button onClick={downloadAll} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#0d5f72]/30 bg-[#0d5f72]/10 text-[#7ecfe0] font-semibold hover:bg-[#0d5f72]/20 transition-all duration-200">
+              <button onClick={downloadAll} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#14788F]/30 bg-[#14788F]/10 text-[#7ecfe0] font-semibold hover:bg-[#14788F]/20 transition-all duration-200">
                 <Download size={18} /> Download All
               </button>
             )}
