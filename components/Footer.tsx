@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-3">Tools</h4>
             <ul className="space-y-2 text-sm text-gray-500">
-              {[["Image Converter","/image-converter"],["Image Compressor","/image-compressor"],["Images to PDF","/images-to-pdf"],["PDF Merger","/pdf-merger"]].map(([l,h])=>(
+              {[["Image Converter","/image-converter"],["Image Compressor","/image-compressor"],["Images to PDF","/images-to-pdf"],["PDF Merger","/pdf-merger"],["PDF to Word","/pdf-to-word"]].map(([l,h])=>(
                 <li key={h}><a href={h} className="hover:text-[#5ca823] transition-colors">{l}</a></li>
               ))}
             </ul>

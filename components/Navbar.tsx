@@ -8,6 +8,7 @@ const links = [
   { href: "/image-compressor", label: "Compressor" },
   { href: "/images-to-pdf", label: "Images → PDF" },
   { href: "/pdf-merger", label: "PDF Merger" },
+  { href: "/pdf-to-word", label: "PDF → Word" },
 ];
 
 export default function Navbar() {

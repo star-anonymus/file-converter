@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ConvertRxLogo from "@/components/ConvertRxLogo";
-import { ImageIcon, FileDown, FilePlus2, Layers, Shield, Zap, Globe, Star } from "lucide-react";
+import { ImageIcon, FileDown, FilePlus2, Layers, Shield, Zap, Globe, Star, FileText } from "lucide-react";
 
 const tools = [
   {
@@ -40,6 +40,15 @@ const tools = [
     tags: ["Merge", "Reorder", "Download"],
     popular: false,
   },
+  {
+    href: "/pdf-to-word",
+    icon: FileText,
+    color: "indigo",
+    title: "PDF to Word",
+    description: "Extract text from any PDF and download it as an editable .docx Word file. 100% free, no upload needed.",
+    tags: ["PDF→DOCX", "Editable", "Batch"],
+    popular: true,
+  },
 ];
 
 const colorMap: Record<string, { border: string; bg: string; icon: string; badge: string; tag: string }> = {
@@ -47,6 +56,7 @@ const colorMap: Record<string, { border: string; bg: string; icon: string; badge
   violet:  { border: "hover:border-violet-500/50",  bg: "group-hover:bg-violet-500/10",  icon: "text-violet-400",  badge: "bg-violet-500/10 text-violet-300",  tag: "bg-violet-500/10 text-violet-300 border-violet-500/20" },
   emerald: { border: "hover:border-emerald-500/50", bg: "group-hover:bg-emerald-500/10", icon: "text-emerald-400", badge: "bg-emerald-500/10 text-emerald-300", tag: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20" },
   orange:  { border: "hover:border-orange-500/50",  bg: "group-hover:bg-orange-500/10",  icon: "text-orange-400",  badge: "bg-orange-500/10 text-orange-300",  tag: "bg-orange-500/10 text-orange-300 border-orange-500/20" },
+  indigo:  { border: "hover:border-indigo-500/50",  bg: "group-hover:bg-indigo-500/10",  icon: "text-indigo-400",  badge: "bg-indigo-500/10 text-indigo-300",  tag: "bg-indigo-500/10 text-indigo-300 border-indigo-500/20" },
 };
 
 const features = [
