@@ -181,8 +181,8 @@ export default function PdfToWordPage() {
 
           {/* Header */}
           <div className="text-center mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mx-auto mb-4">
-              <FileText size={26} className="text-indigo-400" />
+            <div className="w-14 h-14 rounded-2xl bg-[#0d5f72]/15 border border-[#0d5f72]/30 flex items-center justify-center mx-auto mb-4">
+              <FileText size={26} className="text-[#1a8fa8]" />
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">PDF to Word</h1>
             <p className="text-gray-400 max-w-lg mx-auto text-sm leading-relaxed">
@@ -200,11 +200,11 @@ export default function PdfToWordPage() {
             {...getRootProps()}
             className={`relative rounded-2xl border-2 border-dashed p-10 text-center cursor-pointer transition-all duration-200 mb-6
               ${isDragActive
-                ? "border-indigo-400 bg-indigo-500/10"
-                : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"}`}
+                ? "dropzone-active"
+                : "border-white/10 bg-white/[0.02] hover:border-[#0d5f72]/50 hover:bg-[#0d5f72]/05"}`}
           >
             <input {...getInputProps()} />
-            <Upload size={28} className={`mx-auto mb-3 ${isDragActive ? "text-indigo-400" : "text-gray-500"}`} />
+            <Upload size={28} className={`mx-auto mb-3 ${isDragActive ? "text-[#1a8fa8]" : "text-gray-500"}`} />
             <p className="text-gray-300 font-medium">
               {isDragActive ? "Drop your PDFs here" : "Drag & drop PDF files here"}
             </p>
@@ -216,7 +216,7 @@ export default function PdfToWordPage() {
             <div className="space-y-3 mb-6">
               {items.map((item, i) => (
                 <div key={i} className="flex items-center gap-4 rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3">
-                  <FileText size={18} className="text-indigo-400 shrink-0" />
+                  <FileText size={18} className="text-[#1a8fa8] shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="text-white text-sm font-medium truncate">{item.file.name}</p>
                     <p className="text-gray-600 text-xs mt-0.5">
@@ -230,14 +230,14 @@ export default function PdfToWordPage() {
                     <span className="text-xs text-gray-500 shrink-0">Ready</span>
                   )}
                   {item.status === "converting" && (
-                    <Loader2 size={16} className="text-indigo-400 animate-spin shrink-0" />
+                    <Loader2 size={16} className="text-[#1a8fa8] animate-spin shrink-0" />
                   )}
                   {item.status === "done" && (
                     <div className="flex items-center gap-2 shrink-0">
                       <CheckCircle2 size={16} className="text-green-400" />
                       <button
                         onClick={() => downloadOne(item)}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-all"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg btn-teal text-xs font-semibold"
                       >
                         <Download size={13} /> Download
                       </button>
@@ -274,7 +274,7 @@ export default function PdfToWordPage() {
                 <button
                   onClick={convertAll}
                   disabled={converting}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-all duration-200"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl btn-teal disabled:opacity-60 disabled:cursor-not-allowed font-semibold"
                 >
                   {converting ? (
                     <><Loader2 size={18} className="animate-spin" /> Converting…</>

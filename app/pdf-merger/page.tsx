@@ -62,7 +62,7 @@ export default function PdfMergerPage() {
         <div className="max-w-4xl mx-auto">
 
           <div className="text-center mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 mx-auto mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-[#5ca823]/15 border border-[#5ca823]/30 flex items-center justify-center text-[#5ca823] mx-auto mb-4">
               <Layers size={26} />
             </div>
             <h1 className="text-4xl font-extrabold text-white mb-3">PDF Merger</h1>
@@ -70,7 +70,7 @@ export default function PdfMergerPage() {
           </div>
 
           {/* Dropzone */}
-          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active border-orange-500" : "border-white/10 hover:border-orange-500/50"}`}>
+          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#5ca823]/50 hover:bg-[#5ca823]/05"}`}>
             <input {...getInputProps()} />
             <Upload size={36} className="mx-auto text-gray-600 mb-4" />
             <p className="text-white font-semibold text-lg mb-1">Drop PDF files here</p>
@@ -92,7 +92,7 @@ export default function PdfMergerPage() {
               <div className="space-y-2">
                 {pdfs.map((p, i) => (
                   <div key={p.id} className="flex items-center gap-3 bg-white/3 rounded-xl px-4 py-3">
-                    <span className="w-7 h-7 rounded-lg bg-orange-500/10 text-orange-400 text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+                    <span className="w-7 h-7 rounded-lg bg-[#5ca823]/15 text-[#5ca823] text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm text-white truncate">{p.file.name}</p>
                       <p className="text-xs text-gray-600 mt-0.5">{formatBytes(p.file.size)}{p.pages ? ` · ${p.pages} page${p.pages > 1 ? "s" : ""}` : ""}</p>
@@ -110,12 +110,12 @@ export default function PdfMergerPage() {
 
           <div className="flex flex-wrap gap-3">
             <button onClick={handleMerge} disabled={merging || pdfs.length < 2}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-orange-600 hover:bg-orange-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold transition-all duration-200 shadow-lg shadow-orange-600/20">
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed font-semibold shadow-lg shadow-[#5ca823]/20 btn-green">
               {merging ? <RefreshCw size={18} className="animate-spin-slow" /> : <Layers size={18} />}
               {merging ? "Merging..." : `Merge ${pdfs.length} PDFs`}
             </button>
             {mergedUrl && (
-              <a href={mergedUrl} download="merged.pdf" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-green-500/30 bg-green-500/10 text-green-300 font-semibold hover:bg-green-500/20 transition-all duration-200">
+              <a href={mergedUrl} download="merged.pdf" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#0d5f72]/30 bg-[#0d5f72]/10 text-[#7ecfe0] font-semibold hover:bg-[#0d5f72]/20 transition-all duration-200">
                 <Download size={18} /> Download Merged PDF
               </a>
             )}

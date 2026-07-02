@@ -87,7 +87,7 @@ export default function ImageConverterPage() {
 
           {/* Header */}
           <div className="text-center mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mx-auto mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-[#0d5f72]/15 border border-[#0d5f72]/30 flex items-center justify-center text-[#1a8fa8] mx-auto mb-4">
               <ImageIcon size={26} />
             </div>
             <h1 className="text-4xl font-extrabold text-white mb-3">Image Converter</h1>
@@ -106,8 +106,8 @@ export default function ImageConverterPage() {
                       onClick={() => setFormat(f.value)}
                       className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${
                         format === f.value
-                          ? "bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-500/20"
-                          : "border-white/10 text-gray-400 hover:border-white/20 hover:text-white"
+                          ? "bg-[#0d5f72] border-[#0d5f72] text-white shadow-lg shadow-[#0d5f72]/25"
+                          : "border-white/10 text-gray-400 hover:border-[#0d5f72]/40 hover:text-white"
                       }`}
                     >
                       {f.label}
@@ -121,7 +121,7 @@ export default function ImageConverterPage() {
                     Quality — <span className="text-white">{quality}%</span>
                   </label>
                   <input type="range" min={10} max={100} value={quality} onChange={(e) => setQuality(+e.target.value)}
-                    className="w-full accent-blue-500" />
+                    className="w-full accent-teal-500" />
                 </div>
               )}
             </div>
@@ -131,7 +131,7 @@ export default function ImageConverterPage() {
           <div
             {...getRootProps()}
             className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${
-              isDragActive ? "dropzone-active border-blue-500" : "border-white/10 hover:border-blue-500/50 hover:bg-blue-500/3"
+              isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#0d5f72]/50 hover:bg-[#0d5f72]/05"
             }`}
           >
             <input {...getInputProps()} />
@@ -167,7 +167,7 @@ export default function ImageConverterPage() {
                           <span className="text-xs text-green-500">{formatBytes(r.size)}</span>
                         )}
                         {r?.status === "done" && (
-                          <a href={r.url} download={r.name} className="text-blue-400 hover:text-blue-300 transition-colors">
+                          <a href={r.url} download={r.name} className="text-[#1a8fa8] hover:text-[#7ecfe0] transition-colors">
                             <Download size={15} />
                           </a>
                         )}
@@ -184,13 +184,13 @@ export default function ImageConverterPage() {
             <button
               onClick={handleConvert}
               disabled={converting || !files.length}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold transition-all duration-200 shadow-lg shadow-blue-600/20"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed font-semibold shadow-lg shadow-[#0d5f72]/25 btn-teal"
             >
               {converting ? <RefreshCw size={18} className="animate-spin-slow" /> : <ImageIcon size={18} />}
               {converting ? "Converting..." : "Convert Images"}
             </button>
             {results.some((r) => r.status === "done") && (
-              <button onClick={downloadAll} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-green-500/30 bg-green-500/10 text-green-300 font-semibold hover:bg-green-500/20 transition-all duration-200">
+              <button onClick={downloadAll} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#5ca823]/30 bg-[#5ca823]/10 text-[#a3e635] font-semibold hover:bg-[#5ca823]/20 transition-all duration-200">
                 <Download size={18} /> Download All
               </button>
             )}
