@@ -65,45 +65,45 @@ export default function ImageCompressorPage() {
             <div className="w-14 h-14 rounded-2xl bg-[#5ca823]/15 border border-[#5ca823]/30 flex items-center justify-center text-[#5ca823] mx-auto mb-4">
               <FileDown size={26} />
             </div>
-            <h1 className="text-4xl font-extrabold text-white mb-3">Image Compressor</h1>
-            <p className="text-gray-400 max-w-lg mx-auto">Reduce image file size without noticeable quality loss. Batch process multiple images. Private — runs in your browser.</p>
+            <h1 className="text-4xl font-extrabold text-slate-900 mb-3">Image Compressor</h1>
+            <p className="text-slate-500 max-w-lg mx-auto">Reduce image file size without noticeable quality loss. Batch process multiple images. Private — runs in your browser.</p>
           </div>
 
           {/* Settings */}
-          <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 mb-5 grid sm:grid-cols-2 gap-6">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 mb-5 grid sm:grid-cols-2 gap-6">
             <div>
-              <label className="block text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">
-                Quality — <span className="text-white">{quality}%</span>
-                <span className="ml-2 text-gray-600 normal-case font-normal">({quality >= 80 ? "High" : quality >= 60 ? "Medium" : "Low"})</span>
+              <label className="block text-xs text-slate-500 font-semibold uppercase tracking-wide mb-2">
+                Quality — <span className="text-slate-900">{quality}%</span>
+                <span className="ml-2 text-slate-400 normal-case font-normal">({quality >= 80 ? "High" : quality >= 60 ? "Medium" : "Low"})</span>
               </label>
               <input type="range" min={10} max={100} value={quality} onChange={(e) => setQuality(+e.target.value)} className="w-full accent-[#5ca823]" />
-              <div className="flex justify-between text-xs text-gray-600 mt-1"><span>Smaller file</span><span>Better quality</span></div>
+              <div className="flex justify-between text-xs text-slate-400 mt-1"><span>Smaller file</span><span>Better quality</span></div>
             </div>
             <div>
-              <label className="block text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">
-                Max Output Size — <span className="text-white">{maxSizeMB} MB</span>
+              <label className="block text-xs text-slate-500 font-semibold uppercase tracking-wide mb-2">
+                Max Output Size — <span className="text-slate-900">{maxSizeMB} MB</span>
               </label>
               <input type="range" min={0.1} max={5} step={0.1} value={maxSizeMB} onChange={(e) => setMaxSizeMB(+e.target.value)} className="w-full accent-[#5ca823]" />
-              <div className="flex justify-between text-xs text-gray-600 mt-1"><span>0.1 MB</span><span>5 MB</span></div>
+              <div className="flex justify-between text-xs text-slate-400 mt-1"><span>0.1 MB</span><span>5 MB</span></div>
             </div>
           </div>
 
           {/* Dropzone */}
-          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#5ca823]/50 hover:bg-[#5ca823]/05"}`}>
+          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-slate-200 hover:border-[#5ca823]/50 hover:bg-[#5ca823]/05"}`}>
             <input {...getInputProps()} />
-            <Upload size={36} className="mx-auto text-gray-600 mb-4" />
-            <p className="text-white font-semibold text-lg mb-1">Drop images here</p>
-            <p className="text-gray-500 text-sm">or click to browse · JPG, PNG, WEBP · Max 30MB each</p>
+            <Upload size={36} className="mx-auto text-slate-400 mb-4" />
+            <p className="text-slate-900 font-semibold text-lg mb-1">Drop images here</p>
+            <p className="text-slate-500 text-sm">or click to browse · JPG, PNG, WEBP · Max 30MB each</p>
           </div>
 
           {/* Progress */}
           {compressing && (
-            <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-5 mb-5">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm text-white font-medium">Compressing...</span>
+                <span className="text-sm text-slate-900 font-medium">Compressing...</span>
                 <span className="text-sm font-bold" style={{ color: "#5ca823" }}>{progress}%</span>
               </div>
-              <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div className="h-2 rounded-full bg-[#14788F]/06 overflow-hidden">
                 <div className="h-full rounded-full progress-bar transition-all duration-300" style={{ width: `${progress}%` }} />
               </div>
             </div>
@@ -111,25 +111,25 @@ export default function ImageCompressorPage() {
 
           {/* Results */}
           {results.length > 0 && (
-            <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-5 mb-5">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <TrendingDown size={18} className="text-green-400" />
-                  <span className="text-white font-semibold">Average savings: <span className="text-green-400">{totalSavings}%</span></span>
+                  <span className="text-slate-900 font-semibold">Average savings: <span className="text-green-400">{totalSavings}%</span></span>
                 </div>
-                <button onClick={() => { setFiles([]); setResults([]); }} className="text-gray-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
+                <button onClick={() => { setFiles([]); setResults([]); }} className="text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
                   <Trash2 size={14} /> Clear
                 </button>
               </div>
               <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
                 {results.map((r, i) => (
-                  <div key={i} className="flex items-center justify-between bg-white/3 rounded-xl px-4 py-3 gap-4">
+                  <div key={i} className="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3 gap-4">
                     <div className="flex items-center gap-3 min-w-0">
                       <CheckCircle2 size={16} className="text-green-400 shrink-0" />
-                      <span className="text-sm text-gray-300 truncate">{r.name}</span>
+                      <span className="text-sm text-slate-700 truncate">{r.name}</span>
                     </div>
                     <div className="flex items-center gap-4 shrink-0">
-                      <span className="text-xs text-gray-600 line-through">{formatBytes(r.originalSize)}</span>
+                      <span className="text-xs text-slate-400 line-through">{formatBytes(r.originalSize)}</span>
                       <span className="text-xs text-green-400 font-semibold">{formatBytes(r.compressedSize)}</span>
                       <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded-full font-bold">-{r.savings}%</span>
                       {r.url && <a href={r.url} download={`compressed_${r.name}`} className="text-[#5ca823] hover:text-[#a3e635] transition-colors"><Download size={15} /></a>}

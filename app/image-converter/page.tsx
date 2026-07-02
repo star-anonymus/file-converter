@@ -90,15 +90,15 @@ export default function ImageConverterPage() {
             <div className="w-14 h-14 rounded-2xl bg-[#14788F]/15 border border-[#14788F]/30 flex items-center justify-center text-[#1a9ab5] mx-auto mb-4">
               <ImageIcon size={26} />
             </div>
-            <h1 className="text-4xl font-extrabold text-white mb-3">Image Converter</h1>
-            <p className="text-gray-400 max-w-lg mx-auto">Convert JPG, PNG, WEBP, GIF, BMP instantly. Batch convert multiple files. 100% private — processed in your browser.</p>
+            <h1 className="text-4xl font-extrabold text-slate-900 mb-3">Image Converter</h1>
+            <p className="text-slate-500 max-w-lg mx-auto">Convert JPG, PNG, WEBP, GIF, BMP instantly. Batch convert multiple files. 100% private — processed in your browser.</p>
           </div>
 
           {/* Settings */}
-          <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 mb-5">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 mb-5">
             <div className="flex flex-wrap gap-6 items-end">
               <div className="flex-1 min-w-[180px]">
-                <label className="block text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">Convert To</label>
+                <label className="block text-xs text-slate-500 font-semibold uppercase tracking-wide mb-2">Convert To</label>
                 <div className="flex gap-2">
                   {FORMATS.map((f) => (
                     <button
@@ -106,8 +106,8 @@ export default function ImageConverterPage() {
                       onClick={() => setFormat(f.value)}
                       className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${
                         format === f.value
-                          ? "bg-[#14788F] border-[#14788F] text-white shadow-lg shadow-[#14788F]/25"
-                          : "border-white/10 text-gray-400 hover:border-[#14788F]/40 hover:text-white"
+                          ? "bg-[#14788F] border-[#14788F] text-slate-900 shadow-lg shadow-[#14788F]/25"
+                          : "border-slate-200 text-slate-500 hover:border-[#14788F]/40 hover:text-slate-900"
                       }`}
                     >
                       {f.label}
@@ -117,8 +117,8 @@ export default function ImageConverterPage() {
               </div>
               {format === "image/jpeg" && (
                 <div className="flex-1 min-w-[180px]">
-                  <label className="block text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">
-                    Quality — <span className="text-white">{quality}%</span>
+                  <label className="block text-xs text-slate-500 font-semibold uppercase tracking-wide mb-2">
+                    Quality — <span className="text-slate-900">{quality}%</span>
                   </label>
                   <input type="range" min={10} max={100} value={quality} onChange={(e) => setQuality(+e.target.value)}
                     className="w-full accent-teal-500" />
@@ -131,21 +131,21 @@ export default function ImageConverterPage() {
           <div
             {...getRootProps()}
             className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${
-              isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#14788F]/50 hover:bg-[#14788F]/05"
+              isDragActive ? "dropzone-active" : "border-slate-200 hover:border-[#14788F]/50 hover:bg-[#14788F]/05"
             }`}
           >
             <input {...getInputProps()} />
-            <Upload size={36} className="mx-auto text-gray-600 mb-4" />
-            <p className="text-white font-semibold text-lg mb-1">Drop images here</p>
-            <p className="text-gray-500 text-sm">or click to browse · JPG, PNG, WEBP, GIF, BMP · Max 20MB each</p>
+            <Upload size={36} className="mx-auto text-slate-400 mb-4" />
+            <p className="text-slate-900 font-semibold text-lg mb-1">Drop images here</p>
+            <p className="text-slate-500 text-sm">or click to browse · JPG, PNG, WEBP, GIF, BMP · Max 20MB each</p>
           </div>
 
           {/* File list */}
           {files.length > 0 && (
-            <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-5 mb-5">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5">
               <div className="flex items-center justify-between mb-4">
-                <p className="text-white font-semibold text-sm">{files.length} file{files.length > 1 ? "s" : ""} selected</p>
-                <button onClick={() => { setFiles([]); setResults([]); }} className="text-gray-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
+                <p className="text-slate-900 font-semibold text-sm">{files.length} file{files.length > 1 ? "s" : ""} selected</p>
+                <button onClick={() => { setFiles([]); setResults([]); }} className="text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
                   <Trash2 size={14} /> Clear all
                 </button>
               </div>
@@ -153,16 +153,16 @@ export default function ImageConverterPage() {
                 {files.map((f, i) => {
                   const r = results[i];
                   return (
-                    <div key={i} className="flex items-center justify-between bg-white/3 rounded-xl px-4 py-3">
+                    <div key={i} className="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3">
                       <div className="flex items-center gap-3 min-w-0">
                         {r ? (r.status === "done"
                           ? <CheckCircle2 size={16} className="text-green-400 shrink-0" />
                           : <AlertCircle size={16} className="text-red-400 shrink-0" />)
                           : <div className="w-4 h-4 rounded-full border-2 border-gray-600 shrink-0" />}
-                        <span className="text-sm text-gray-300 truncate">{f.name}</span>
+                        <span className="text-sm text-slate-700 truncate">{f.name}</span>
                       </div>
                       <div className="flex items-center gap-4 shrink-0 ml-4">
-                        <span className="text-xs text-gray-600">{formatBytes(f.size)}</span>
+                        <span className="text-xs text-slate-400">{formatBytes(f.size)}</span>
                         {r?.status === "done" && (
                           <span className="text-xs text-green-500">{formatBytes(r.size)}</span>
                         )}

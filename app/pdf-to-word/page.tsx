@@ -184,9 +184,9 @@ export default function PdfToWordPage() {
             <div className="w-14 h-14 rounded-2xl bg-[#14788F]/15 border border-[#14788F]/30 flex items-center justify-center mx-auto mb-4">
               <FileText size={26} className="text-[#1a9ab5]" />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">PDF to Word</h1>
-            <p className="text-gray-400 max-w-lg mx-auto text-sm leading-relaxed">
-              Extract text from your PDF and save it as an editable <strong className="text-gray-300">.docx</strong> file.
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">PDF to Word</h1>
+            <p className="text-slate-500 max-w-lg mx-auto text-sm leading-relaxed">
+              Extract text from your PDF and save it as an editable <strong className="text-slate-700">.docx</strong> file.
               Works entirely in your browser — nothing is uploaded.
             </p>
             <div className="mt-3 inline-flex items-center gap-1.5 text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-full">
@@ -201,25 +201,25 @@ export default function PdfToWordPage() {
             className={`relative rounded-2xl border-2 border-dashed p-10 text-center cursor-pointer transition-all duration-200 mb-6
               ${isDragActive
                 ? "dropzone-active"
-                : "border-white/10 bg-white/[0.02] hover:border-[#14788F]/50 hover:bg-[#14788F]/05"}`}
+                : "border-slate-200 bg-white hover:border-[#14788F]/50 hover:bg-[#14788F]/05"}`}
           >
             <input {...getInputProps()} />
-            <Upload size={28} className={`mx-auto mb-3 ${isDragActive ? "text-[#1a9ab5]" : "text-gray-500"}`} />
-            <p className="text-gray-300 font-medium">
+            <Upload size={28} className={`mx-auto mb-3 ${isDragActive ? "text-[#1a9ab5]" : "text-slate-500"}`} />
+            <p className="text-slate-700 font-medium">
               {isDragActive ? "Drop your PDFs here" : "Drag & drop PDF files here"}
             </p>
-            <p className="text-gray-600 text-sm mt-1">or click to browse</p>
+            <p className="text-slate-400 text-sm mt-1">or click to browse</p>
           </div>
 
           {/* File list */}
           {items.length > 0 && (
             <div className="space-y-3 mb-6">
               {items.map((item, i) => (
-                <div key={i} className="flex items-center gap-4 rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3">
+                <div key={i} className="flex items-center gap-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                   <FileText size={18} className="text-[#1a9ab5] shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-white text-sm font-medium truncate">{item.file.name}</p>
-                    <p className="text-gray-600 text-xs mt-0.5">
+                    <p className="text-slate-900 text-sm font-medium truncate">{item.file.name}</p>
+                    <p className="text-slate-400 text-xs mt-0.5">
                       {(item.file.size / 1024).toFixed(1)} KB
                       {item.pageCount ? ` · ${item.pageCount} page${item.pageCount > 1 ? "s" : ""}` : ""}
                     </p>
@@ -227,7 +227,7 @@ export default function PdfToWordPage() {
 
                   {/* Status */}
                   {item.status === "idle" && (
-                    <span className="text-xs text-gray-500 shrink-0">Ready</span>
+                    <span className="text-xs text-slate-500 shrink-0">Ready</span>
                   )}
                   {item.status === "converting" && (
                     <Loader2 size={16} className="text-[#1a9ab5] animate-spin shrink-0" />
@@ -250,7 +250,7 @@ export default function PdfToWordPage() {
                   )}
 
                   {item.status !== "converting" && (
-                    <button onClick={() => removeItem(i)} className="text-gray-600 hover:text-gray-300 transition-colors shrink-0">
+                    <button onClick={() => removeItem(i)} className="text-slate-400 hover:text-slate-700 transition-colors shrink-0">
                       <X size={15} />
                     </button>
                   )}
@@ -286,14 +286,14 @@ export default function PdfToWordPage() {
               {doneCount > 1 && (
                 <button
                   onClick={downloadAll}
-                  className="flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm transition-all duration-200"
+                  className="flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-200 bg-[#14788F]/06 hover:bg-slate-100 text-slate-900 font-semibold text-sm transition-all duration-200"
                 >
                   <Download size={16} /> Download All
                 </button>
               )}
               <button
                 onClick={() => setItems([])}
-                className="px-4 py-3 rounded-xl border border-white/8 text-gray-500 hover:text-gray-300 hover:border-white/15 text-sm transition-all"
+                className="px-4 py-3 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-700 hover:border-white/15 text-sm transition-all"
               >
                 Clear
               </button>
@@ -301,7 +301,7 @@ export default function PdfToWordPage() {
           )}
 
           {/* Info box */}
-          <div className="mt-10 rounded-2xl border border-white/5 bg-white/[0.02] p-6 grid sm:grid-cols-3 gap-5 text-center">
+          <div className="mt-10 rounded-2xl border border-slate-100 bg-white p-6 grid sm:grid-cols-3 gap-5 text-center">
             {[
               { emoji: "🔒", title: "100% Private", desc: "PDFs are processed locally in your browser. Never uploaded." },
               { emoji: "📝", title: "Editable Text", desc: "Get a real .docx file you can open and edit in Microsoft Word." },
@@ -309,8 +309,8 @@ export default function PdfToWordPage() {
             ].map(({ emoji, title, desc }) => (
               <div key={title}>
                 <div className="text-2xl mb-2">{emoji}</div>
-                <p className="text-white font-semibold text-sm mb-1">{title}</p>
-                <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+                <p className="text-slate-900 font-semibold text-sm mb-1">{title}</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>

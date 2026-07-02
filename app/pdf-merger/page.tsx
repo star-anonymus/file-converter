@@ -65,42 +65,42 @@ export default function PdfMergerPage() {
             <div className="w-14 h-14 rounded-2xl bg-[#5ca823]/15 border border-[#5ca823]/30 flex items-center justify-center text-[#5ca823] mx-auto mb-4">
               <Layers size={26} />
             </div>
-            <h1 className="text-4xl font-extrabold text-white mb-3">PDF Merger</h1>
-            <p className="text-gray-400 max-w-lg mx-auto">Combine multiple PDF files into one. Reorder using the arrows before merging. Runs entirely in your browser.</p>
+            <h1 className="text-4xl font-extrabold text-slate-900 mb-3">PDF Merger</h1>
+            <p className="text-slate-500 max-w-lg mx-auto">Combine multiple PDF files into one. Reorder using the arrows before merging. Runs entirely in your browser.</p>
           </div>
 
           {/* Dropzone */}
-          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#5ca823]/50 hover:bg-[#5ca823]/05"}`}>
+          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-12 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-slate-200 hover:border-[#5ca823]/50 hover:bg-[#5ca823]/05"}`}>
             <input {...getInputProps()} />
-            <Upload size={36} className="mx-auto text-gray-600 mb-4" />
-            <p className="text-white font-semibold text-lg mb-1">Drop PDF files here</p>
-            <p className="text-gray-500 text-sm">or click to browse · PDF files only</p>
+            <Upload size={36} className="mx-auto text-slate-400 mb-4" />
+            <p className="text-slate-900 font-semibold text-lg mb-1">Drop PDF files here</p>
+            <p className="text-slate-500 text-sm">or click to browse · PDF files only</p>
           </div>
 
           {/* PDF list */}
           {pdfs.length > 0 && (
-            <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-5 mb-5">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <p className="text-white font-semibold text-sm">{pdfs.length} PDF{pdfs.length > 1 ? "s" : ""} · {totalPages} pages total</p>
-                  <p className="text-gray-600 text-xs mt-0.5">Use arrows to reorder before merging</p>
+                  <p className="text-slate-900 font-semibold text-sm">{pdfs.length} PDF{pdfs.length > 1 ? "s" : ""} · {totalPages} pages total</p>
+                  <p className="text-slate-400 text-xs mt-0.5">Use arrows to reorder before merging</p>
                 </div>
-                <button onClick={() => { setPdfs([]); setMergedUrl(null); }} className="text-gray-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
+                <button onClick={() => { setPdfs([]); setMergedUrl(null); }} className="text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
                   <Trash2 size={14} /> Clear all
                 </button>
               </div>
               <div className="space-y-2">
                 {pdfs.map((p, i) => (
-                  <div key={p.id} className="flex items-center gap-3 bg-white/3 rounded-xl px-4 py-3">
+                  <div key={p.id} className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3">
                     <span className="w-7 h-7 rounded-lg bg-[#5ca823]/15 text-[#5ca823] text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm text-white truncate">{p.file.name}</p>
-                      <p className="text-xs text-gray-600 mt-0.5">{formatBytes(p.file.size)}{p.pages ? ` · ${p.pages} page${p.pages > 1 ? "s" : ""}` : ""}</p>
+                      <p className="text-sm text-slate-900 truncate">{p.file.name}</p>
+                      <p className="text-xs text-slate-400 mt-0.5">{formatBytes(p.file.size)}{p.pages ? ` · ${p.pages} page${p.pages > 1 ? "s" : ""}` : ""}</p>
                     </div>
                     <div className="flex items-center gap-1 shrink-0">
-                      <button onClick={() => moveUp(i)} disabled={i === 0} className="w-7 h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 disabled:opacity-30 transition-all flex items-center justify-center text-xs font-bold">↑</button>
-                      <button onClick={() => moveDown(i)} disabled={i === pdfs.length - 1} className="w-7 h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 disabled:opacity-30 transition-all flex items-center justify-center text-xs font-bold">↓</button>
-                      <button onClick={() => remove(p.id)} className="w-7 h-7 rounded-lg bg-white/5 text-red-400 hover:bg-red-500/20 transition-all flex items-center justify-center"><X size={13} /></button>
+                      <button onClick={() => moveUp(i)} disabled={i === 0} className="w-7 h-7 rounded-lg bg-[#14788F]/06 text-slate-500 hover:text-slate-900 hover:bg-slate-100 disabled:opacity-30 transition-all flex items-center justify-center text-xs font-bold">↑</button>
+                      <button onClick={() => moveDown(i)} disabled={i === pdfs.length - 1} className="w-7 h-7 rounded-lg bg-[#14788F]/06 text-slate-500 hover:text-slate-900 hover:bg-slate-100 disabled:opacity-30 transition-all flex items-center justify-center text-xs font-bold">↓</button>
+                      <button onClick={() => remove(p.id)} className="w-7 h-7 rounded-lg bg-[#14788F]/06 text-red-400 hover:bg-red-500/20 transition-all flex items-center justify-center"><X size={13} /></button>
                     </div>
                   </div>
                 ))}

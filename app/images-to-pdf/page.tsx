@@ -61,17 +61,17 @@ export default function ImagesToPdfPage() {
             <div className="w-14 h-14 rounded-2xl bg-[#14788F]/15 border border-[#14788F]/30 flex items-center justify-center text-[#1a9ab5] mx-auto mb-4">
               <FilePlus2 size={26} />
             </div>
-            <h1 className="text-4xl font-extrabold text-white mb-3">Images to PDF</h1>
-            <p className="text-gray-400 max-w-lg mx-auto">Combine multiple images into a single PDF. Reorder images, choose page size. 100% private — runs in your browser.</p>
+            <h1 className="text-4xl font-extrabold text-slate-900 mb-3">Images to PDF</h1>
+            <p className="text-slate-500 max-w-lg mx-auto">Combine multiple images into a single PDF. Reorder images, choose page size. 100% private — runs in your browser.</p>
           </div>
 
           {/* Settings */}
-          <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-5 mb-5">
-            <label className="block text-xs text-gray-500 font-semibold uppercase tracking-wide mb-3">Page Size</label>
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5">
+            <label className="block text-xs text-slate-500 font-semibold uppercase tracking-wide mb-3">Page Size</label>
             <div className="flex gap-2">
               {(["A4", "Letter", "Fit"] as const).map((s) => (
                 <button key={s} onClick={() => setPageSize(s)}
-                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${pageSize === s ? "bg-[#14788F] border-[#14788F] text-white" : "border-white/10 text-gray-400 hover:border-[#14788F]/40 hover:text-white"}`}>
+                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${pageSize === s ? "bg-[#14788F] border-[#14788F] text-slate-900" : "border-slate-200 text-slate-500 hover:border-[#14788F]/40 hover:text-slate-900"}`}>
                   {s === "Fit" ? "Fit to Image" : s}
                 </button>
               ))}
@@ -79,28 +79,28 @@ export default function ImagesToPdfPage() {
           </div>
 
           {/* Dropzone */}
-          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-10 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-white/10 hover:border-[#14788F]/50 hover:bg-[#14788F]/05"}`}>
+          <div {...getRootProps()} className={`rounded-2xl border-2 border-dashed p-10 text-center cursor-pointer transition-all duration-300 mb-5 ${isDragActive ? "dropzone-active" : "border-slate-200 hover:border-[#14788F]/50 hover:bg-[#14788F]/05"}`}>
             <input {...getInputProps()} />
-            <Upload size={36} className="mx-auto text-gray-600 mb-4" />
-            <p className="text-white font-semibold text-lg mb-1">Drop images here</p>
-            <p className="text-gray-500 text-sm">or click to browse · JPG, PNG, WEBP</p>
+            <Upload size={36} className="mx-auto text-slate-400 mb-4" />
+            <p className="text-slate-900 font-semibold text-lg mb-1">Drop images here</p>
+            <p className="text-slate-500 text-sm">or click to browse · JPG, PNG, WEBP</p>
           </div>
 
           {/* Image grid with remove */}
           {images.length > 0 && (
-            <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-5 mb-5">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 mb-5">
               <div className="flex items-center justify-between mb-4">
-                <p className="text-white font-semibold text-sm">{images.length} image{images.length > 1 ? "s" : ""} · drag to reorder</p>
-                <button onClick={() => { setImages([]); setPdfUrl(null); }} className="text-gray-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
+                <p className="text-slate-900 font-semibold text-sm">{images.length} image{images.length > 1 ? "s" : ""} · drag to reorder</p>
+                <button onClick={() => { setImages([]); setPdfUrl(null); }} className="text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm">
                   <Trash2 size={14} /> Clear all
                 </button>
               </div>
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
                 {images.map((img, i) => (
-                  <div key={img.id} className="relative group rounded-xl overflow-hidden border border-white/10 aspect-square bg-white/5">
+                  <div key={img.id} className="relative group rounded-xl overflow-hidden border border-slate-200 aspect-square bg-[#14788F]/06">
                     <img src={img.preview} alt={img.file.name} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <button onClick={() => remove(img.id)} className="w-7 h-7 rounded-full bg-red-500 flex items-center justify-center text-white hover:bg-red-600 transition-colors">
+                      <button onClick={() => remove(img.id)} className="w-7 h-7 rounded-full bg-red-500 flex items-center justify-center text-slate-900 hover:bg-red-600 transition-colors">
                         <X size={13} />
                       </button>
                     </div>
