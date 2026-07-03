@@ -74,3 +74,40 @@ body { font-family: var(--font-inter); }
   background-size: 200% 100%;
   animation: progress-shine 1.5s linear infinite;
 }
+
+/* === Professional layout additions === */
+.hero-pattern {
+  background-image: radial-gradient(rgba(20,120,143,0.065) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.step-num {
+  width: 52px; height: 52px; border-radius: 9999px;
+  background: linear-gradient(135deg, #14788F, #5ca823);
+  color: white; font-size: 20px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(20,120,143,0.35);
+  flex-shrink: 0;
+}
+.format-card {
+  border: 1.5px solid rgba(20,120,143,0.14);
+  border-radius: 16px; padding: 20px; background: white;
+  transition: all 0.25s;
+}
+.format-card:hover {
+  border-color: rgba(20,120,143,0.45);
+  box-shadow: 0 8px 28px rgba(20,120,143,0.12);
+  transform: translateY(-3px);
+}
+.faq-item {
+  border: 1.5px solid rgba(20,120,143,0.14);
+  border-radius: 16px; overflow: hidden; background: white;
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: rgba(20,120,143,0.35); }
+.stat-pill {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px; padding: 20px 24px;
+}
+.cta-gradient {
+  background: linear-gradient(135deg, #0e6a80 0%, #14788F 40%, #1a9a70 100%);
+}
